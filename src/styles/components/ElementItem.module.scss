@@ -1,0 +1,90 @@
+.file {
+  list-style: none;
+  padding: 0;
+  width: 50%;
+
+  label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    cursor: pointer;
+    border: 1px solid #4f4f4f;
+    background-color: #111;
+    padding: 16px;
+    border-radius: 0.25rem;
+    min-height: calc(100px + 32px);
+
+    &.selected {
+      background-color: #007bff;
+      border-color: #99caff;
+    }
+
+    .image {
+      flex: 0 0 100px;
+      height: 100px;
+      overflow: hidden;
+      display: block;
+      position: relative;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        z-index: 2;
+        border-radius: 4px;
+      }
+      .imageType {
+        text-transform: uppercase;
+        padding: 4px 8px;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 4px;
+        position: absolute;
+        z-index: 3;
+        bottom: 2px;
+        right: 2px;
+        font-size: 0.75rem;
+        font-weight: bold;
+      }
+      .imageLoader {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .info {
+      flex: 1;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .fileName {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        word-break: break-all;
+      }
+      .filePath {
+        display: block;
+        font-size: 14px;
+        word-break: break-all;
+      }
+      .fileSize {
+        display: block;
+        font-size: 16px;
+        word-break: break-all;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf         # Utiliser LF comme saut de ligne (Unix).
+indent_style = space     # Utiliser des espaces pour l'indentation.
+indent_size = 2          # Taille d'indentation (2 espaces).
+insert_final_newline = true # Ajouter une ligne vide à la fin des fichiers.
+trim_trailing_whitespace = true # Supprimer les espaces inutiles en fin de ligne.
+
+[*.ts]
+indent_size = 2
+
+[*.scss]
+indent_size = 2
+insert_final_newline = true # Ajouter une ligne vide à la fin des fichiers.
+
+[*.tsx]
+indent_size = 2
+
+[*.json]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false # Ne pas supprimer les espaces pour le markdown.

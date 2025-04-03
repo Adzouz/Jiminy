@@ -1,0 +1,81 @@
+.sectionTitle {
+  margin-top: 32px;
+
+  span {
+    color: #007bff;
+  }
+}
+
+.nbItemsDisplayed {
+  text-align: left;
+}
+
+.infoDeletion {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .filesRow {
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+    flex-wrap: nowrap;
+    opacity: .6;
+    filter: grayscale(.6);
+
+    &.activeRow {
+      opacity: 1;
+      filter: none;
+    }
+    &.hidden {
+      display: none;
+    }
+  }
+}
+
+.errorMessage {
+  color: red;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+
+  .message {
+    margin: 0;
+
+    span {
+      font-weight: bold;
+      color: #007bff;
+    }
+  }
+  .button {
+    align-self: center;
+  }
+}
+
+.navigation {
+  margin-top: 16px;
+
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    button {
+      transition: .2s opacity ease-in-out;
+
+      &.hide {
+        opacity: 0;
+      }
+    }
+  }
+}

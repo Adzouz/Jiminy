@@ -1,40 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 👯‍♀️ Jiminy
 
-## Getting Started
+Little web app to help you finding duplicate files and similar images across folders and remove them. 🗑️✨
 
-First, run the development server:
+Made with [Next.js](https://nextjs.org) _(with Pages Router)_.
+
+![Preview of the app](public/screenshot.png)
+
+## 🛠️ Installation
+
+### 1️⃣ Prerequisites
+
+- [Node.js](https://nodejs.org/) (used with version `22.14.0`)
+- [npm](https://www.npmjs.com/) (used with version `10.9.2`)
+
+_Volta is configured and version pinned in the package.json_
+
+### 2️⃣ Install dependencies
+
+Clone the repo and install dependencies by running the following command:
+
+```sh
+git clone https://github.com/Adzouz/Jiminy.git jiminy
+cd jiminy
+npm install
+```
+
+_⚠️ IMPORTANT: If you're running this app on Windows, you'll also need to install [ImageMagick](https://imagemagick.org/script/download.php) and make sure the command is available from your CLI._
+
+## 🏃‍➡️ Run project
+
+To run the project locally, use the following command:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app should start and run on port 3000.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Go to your browser and open [http://localhost:3000](http://localhost:3000) to start using the app.
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+There's only one page for the app but there's also an API (`/api/*`) called by the app to run background processes:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+- **/api/delete** will delete the filesToDelete passed in the body _(for the object props, see typing interface on top of the api route file)_.
+- **/api/image** will fetch and send back the image based on the absolute path (fullPath: string) sent in the URL query.
+- **/api/search** will explore the list of folderPathsToInclude _(string[])_ to find duplicates and similar images (possible to also give a folderPathsToExclude to skip specific folders).
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+_⚠️ Use this API at your own risk._
 
-## Learn More
+_⚠️ Be careful to be sure about what you're doing and test the tool correctly before to familiarize with it. We're not responsible for wrong data deletion._
 
-To learn more about Next.js, take a look at the following resources:
+This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📝 Additional scripts
 
-## Deploy on Vercel
+```sh
+npm run lint
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## 🚀 Deployment
+
+To prepare the app for production, run the following command:
+
+```sh
+npm run build
+```
+---
+
+## 📦 Stack
+
+- ⚛️ **React**
+- 🔗 **Next.JS**
+- 🎨 **Sass**
+- 🔬 **Sharp + heic-convert** _(for image manipulation)_
+- 🛠️ **ESLint + Prettier**
+
+---
+
+## 👨‍💻 Contribute
+
+1. **Fork** the repo
+2. **Create a new fix or feature branch** : `git checkout -b {feat|fix}/update-name`
+3. **Commit** : `git commit -m "{feat|fix}: changes description"`
+4. **Push** : `git push origin {feat|fix}/update-name`
+5. **Open a Pull Request**

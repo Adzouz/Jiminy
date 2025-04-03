@@ -1,0 +1,27 @@
+.filtersTitle {
+  text-align: left;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.filtersList {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+
+  label {
+    display: flex;
+    gap: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 4px 8px;
+    border: 1px solid #4f4f4f;
+    background-color: #111;
+    border-radius: 0.25rem;
+
+    &.active {
+      background-color: #007bff;
+      border-color: #99caff;
+    }
+  }
+}
