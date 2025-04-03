@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -20,6 +21,8 @@
     "sharp": "^0.33.5"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@eslint/eslintrc": "^3",
     "@types/heic-convert": "^2.1.0",
     "@types/node": "^20",
@@ -27,8 +30,16 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
     "prettier": "^3.5.2",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx,jsx,json,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "volta": {
     "node": "22.14.0"

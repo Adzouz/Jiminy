@@ -68,6 +68,7 @@ To prepare the app for production, run the following command:
 ```sh
 npm run build
 ```
+
 ---
 
 ## 📦 Stack
@@ -77,6 +78,8 @@ npm run build
 - 🎨 **Sass**
 - 🔬 **Sharp + heic-convert** _(for image manipulation)_
 - 🛠️ **ESLint + Prettier**
+
+_This project is using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) to check commits messages format._
 
 ---
 
